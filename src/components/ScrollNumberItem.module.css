@@ -1,0 +1,13 @@
+.scroll-item-wrapper {
+  display: inline-block;
+  position: relative;
+  height: auto;
+}
+.scroll-item-wrapper .scroll-numbers {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
