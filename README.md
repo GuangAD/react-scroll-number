@@ -1,50 +1,51 @@
-# React + TypeScript + Vite
+# react-scroll-number
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A react digital scroll up and down animation component
 
-Currently, two official plugins are available:
+## install
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```sh
+pnpm add @ggc12319/react-scroll-number
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Used in components
 
 ```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+import { useState } from "react";
+import "./App.css";
+import ScrollNumber from "../src/index";
+function App() {
+  const [count, setCount] = useState(4.4);
+  const addCount = () => {
+    setCount(count + 1.7);
+  };
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+  const subtractCount = () => {
+    setCount(count - 1.7);
+  };
+  return (
+    <div className="card">
+      <div>
+        <ScrollNumber value={count} fractionDigits={1} />
+      </div>
+      <button onClick={addCount}>count is {count}</button>
+      <button onClick={subtractCount}>count is {count}</button>
+    </div>
+  );
+}
+
+export default App;
+
 ```
+
+## props
+
+| Attribute         | Description                        | Type   | Default |
+| ----------------- | ---------------------------------- | ------ | ------- |
+| value             | figure                             | number | -       |
+| transformDuration | transform duration                 | number | 1500    |
+| fractionDigits    | fraction digits                    | number | 0       |
+| prefix            | prefix                             | string | ''      |
+| infix             | prefix but after the negative sign | string | ''      |
+| suffix            | suffix                             | string | ''      |
+| thousandSeparator | the thousand separator             | string | ,       |

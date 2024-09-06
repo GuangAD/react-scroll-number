@@ -70,6 +70,7 @@ export default function ScrollNumber({
     suffix,
     thousandSeparator
   );
+  console.log("🚀 ~ numbers:", numbers);
   return (
     <div className={style["scroll-number-wrapper"]}>
       {numbers.map((it, index) => {
@@ -80,7 +81,7 @@ export default function ScrollNumber({
             transformDuration={transformDuration}
           />
         ) : (
-          <span key={index}>{it}</span>
+          <span key={it}>{it}</span>
         );
       })}
     </div>
