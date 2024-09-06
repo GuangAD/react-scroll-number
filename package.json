@@ -1,6 +1,6 @@
 {
   "name": "@ggc12319/react-scroll-number",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "main": "dist/react-scroll-number.cjs",
   "module": "dist/react-scroll-number.js",

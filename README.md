@@ -13,7 +13,8 @@ pnpm add @ggc12319/react-scroll-number
 ```js
 import { useState } from "react";
 import "./App.css";
-import ScrollNumber from "../src/index";
+import ScrollNumber from "@ggc12319/react-scroll-number";
+import "@ggc12319/react-scroll-number/style.css";
 function App() {
   const [count, setCount] = useState(4.4);
   const addCount = () => {

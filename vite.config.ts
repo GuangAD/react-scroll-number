@@ -14,7 +14,7 @@ export default defineConfig({
   build: {
     target: "esnext",
     copyPublicDir: false,
-    sourcemap: true,
+    sourcemap: false,
     minify: true,
     cssCodeSplit: true,
     lib: {
