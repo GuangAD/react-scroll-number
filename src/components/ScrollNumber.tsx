@@ -70,7 +70,6 @@ export default function ScrollNumber({
     suffix,
     thousandSeparator
   );
-  console.log("🚀 ~ numbers:", numbers);
   return (
     <div className={style["scroll-number-wrapper"]}>
       {numbers.map((it, index) => {
